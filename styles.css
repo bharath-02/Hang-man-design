@@ -51,7 +51,7 @@ body {
     border:1px solid black;
 }
 #secondPage {
-    /* display:none; */
+    display:none;
     margin:auto;
     width:850px;
     height:600px;
