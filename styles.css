@@ -23,7 +23,6 @@ body {
 }
 #buttonContainer {
     width:70%;
-    /* background-color: red; */
     height:75px;
     margin: 0 auto;
 }
@@ -53,8 +52,6 @@ body {
     width:50%;
     margin:0 auto;
     padding:10px;
-    /* height:50px; */
-    /* background-color: red; */
 }
 #letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10, #letter11, #letter12, #letter13, #letter14, #letter15 {
     width: 10%;
@@ -63,7 +60,6 @@ body {
     text-align: center;
     font-size: 50px;
     line-height:60px;
-    /* background-color: blue; */
 }
 #underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, #underline8, #underline9, #underline10, #underline11, #underline12, #underline13, #underline14, #underline15 {
     width:10%;
@@ -114,4 +110,53 @@ body {
     background-color: steelblue;
     border-radius: 25px;
     cursor:pointer;
+}
+
+@media (max-width:866px) {
+    #firstPage {
+        width:60%;
+        height:500px;
+        /* background-color: red; */
+    }
+    #firstPageText {
+        width:80%;
+        height:100px;
+        padding-top: 20px;
+        /* background-color: blue; */
+    }
+    #heading {
+        font-size:40px;
+        margin:10px auto;
+    }
+    #buttonContainer {
+        width:100%;
+        height:60px;
+        margin:30px auto;
+    }
+    #hangingStand {
+        margin:120px auto 0 auto;
+    }
+}
+@media (max-width:500px) {
+    #firstPage {
+        width:100%;
+        height:100%;
+        /* background-color: red; */
+    }
+    #firstPageText {
+        width:100%;
+        /* background-color: blue; */
+    }
+    #heading {
+        font-size:24px;
+        margin:10px auto;
+    }
+    #buttonContainer {
+        width:90%;
+        height:50px;
+        /* margin:30px auto; */
+    }
+    #hangingStand {
+        margin:70px auto 10px auto;
+    }
 }
