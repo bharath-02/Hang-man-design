@@ -5,8 +5,15 @@ body {
     margin:0;
     background:linear-gradient(gray,white,gray);
 }
-#firstPage {
+#firstPage, #secondPage {
+    /* position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
     margin:auto;
+}
+#firstPage {
     display:block;
     height:65%;
     width:900px;
@@ -33,7 +40,7 @@ body {
     line-height:75px;
     text-align:center;
     color:white;
-    background-color: steelblue;
+    background-color:blue;
     margin:0 auto;
     border-radius: 25px;
     cursor:pointer;
@@ -44,6 +51,59 @@ body {
     border:1px solid black;
 }
 #secondPage {
+    /* display:none; */
+    margin:auto;
+    width:850px;
+    height:600px;
+}
+#category-heading {
+    font-size:50px;
+    text-align: center;
+    margin:50px auto;
+}
+#categoryContainer {
+    width:100%;
+    height:335px;
+}
+#category {
+    width:700px;
+    height:335px;
+    margin:auto;
+}
+#category1, #category2 {
+    float:left;
+    width:700px;
+    height:150px;
+}
+#category1 {
+    margin-bottom:30px;
+}
+#programmingLanguages,
+#frameWorks,
+#movieNames,
+#countryNames {
+    float:left;
+    width:50%;
+    height:100%;
+    font-size: 50px;
+    text-align: center;
+    border:1px solid black;
+    cursor: pointer;
+    padding:25px;
+}
+#programmingLanguages {
+    background: linear-gradient(to right, #000081, white);
+}
+#frameWorks {
+    background: linear-gradient(to right, white, #147b14);
+}
+#movieNames {
+    background: linear-gradient(to right, #bc7a00, white); 
+}
+#countryNames {
+    background: linear-gradient(to right, white, #b10000);
+}
+#thirdPage {
     display:none;
     text-align: center;
 }
@@ -136,6 +196,32 @@ body {
     #hangingStand {
         margin:120px auto 0 auto;
     }
+    #secondPage {
+        width:80%;
+        height:345px;
+    }
+    #category-heading {
+        font-size:30px;
+        margin:0 auto 20px auto;
+    }
+    #categoryContainer {
+        height:180px;
+    }
+    #category {
+        width:80%;
+        height:180px;
+
+    }
+    #category1, #category2{
+        width: 100%;
+        height: 80px;
+    }
+    #category1{
+        margin-bottom: 20px;
+    }
+    #programmingLanguages,#frameWorks,#movieNames,#countryNames {
+        font-size:20px;
+    }
 }
 @media (max-width:500px) {
     #firstPage {
@@ -154,9 +240,24 @@ body {
     #buttonContainer {
         width:90%;
         height:50px;
-        /* margin:30px auto; */
+        margin:30px auto;
     }
     #hangingStand {
         margin:70px auto 10px auto;
+    }
+    #secondPage {
+        width:100%;
+        height:320px;
+    }
+    #category-heading {
+        font-size:25px;
+    }
+    #categoryContainer {
+        margin:0 auto;
+        width:90%;
+        height:180px; 
+    }
+    #programmingLanguages,#frameWorks,#movieNames,#countryNames {
+        font-size:15px;
     }
 }
