@@ -1,0 +1,117 @@
+* {
+    box-sizing:border-box;
+}
+body {
+    margin:0;
+    background:linear-gradient(gray,white,gray);
+}
+#firstPage {
+    margin:auto;
+    display:block;
+    height:65%;
+    width:900px;
+}
+#firstPageText {
+    width:85%;
+    height:300px;
+    margin:10px auto;
+}
+#heading {
+    font-size:50px;
+    text-align: center;
+    margin:50px auto;
+}
+#buttonContainer {
+    width:70%;
+    /* background-color: red; */
+    height:75px;
+    margin: 0 auto;
+}
+#start {
+    font-size:35px;
+    width:35%;
+    height:75px;
+    line-height:75px;
+    text-align:center;
+    color:white;
+    background-color: steelblue;
+    margin:0 auto;
+    border-radius: 25px;
+    cursor:pointer;
+}
+#hangingStand,#hangingMan {
+    display:block;
+    margin:-30px auto 30px auto;
+    border:1px solid black;
+}
+#secondPage {
+    display:none;
+    text-align: center;
+}
+#wordWrap {
+    display:inline-block;
+    width:50%;
+    margin:0 auto;
+    padding:10px;
+    /* height:50px; */
+    /* background-color: red; */
+}
+#letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10, #letter11, #letter12, #letter13, #letter14, #letter15 {
+    width: 10%;
+    height:50px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 50px;
+    line-height:60px;
+    /* background-color: blue; */
+}
+#underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, #underline8, #underline9, #underline10, #underline11, #underline12, #underline13, #underline14, #underline15 {
+    width:10%;
+    height:50px;
+    display:none;
+    float:left;
+    margin-right:5px;
+}
+#characters {
+    width: 5%;
+    height:10px;
+    margin:20px auto;
+    font-size:50px;
+    text-align: center;
+}
+#characters div {
+    width:80%;
+    height:50px;
+    float:left;
+    margin:0 10px 10px 0;
+    cursor:pointer;
+    background-color: red;
+}
+#characters div:hover {
+    background-color: blue;
+}
+#characters div:active {
+    width:80%;
+    font-size: 45px;
+    padding-top: 3px;
+    background-color: green;
+}
+#results {
+    margin-top:10px;
+    height:70px;
+    visibility: hidden;
+    line-height: 70px;
+}
+#reset, #home {
+    display:none;
+    width:50%;
+    height:65px;
+    margin:0 auto 20 auto;
+    font-size:35px;
+    line-height:65px;
+    text-align: center;
+    color:white;
+    background-color: steelblue;
+    border-radius: 25px;
+    cursor:pointer;
+}
