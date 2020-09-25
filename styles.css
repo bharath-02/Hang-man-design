@@ -6,11 +6,6 @@ body {
     background:linear-gradient(gray,white,gray);
 }
 #firstPage, #secondPage {
-    /* position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0; */
     margin:auto;
 }
 #firstPage {
@@ -24,24 +19,29 @@ body {
     margin:10px auto;
 }
 #heading {
-    font-size:50px;
+    font-size:100px;
     text-align: center;
-    margin:50px auto;
+    margin:150px auto 50px auto;
+}
+#dare {
+    text-align: center;
+    font-size: 20px;
 }
 #buttonContainer {
     width:70%;
     height:75px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 #start {
-    font-size:35px;
+    font-size:40px;
     width:35%;
     height:75px;
     line-height:75px;
     text-align:center;
-    color:white;
-    background-color:blue;
+    color:black;
+    background:linear-gradient(to right, gray, lightgray);
     margin:0 auto;
+    border:1px solid gray;
     border-radius: 25px;
     cursor:pointer;
 }
@@ -57,7 +57,7 @@ body {
     height:600px;
 }
 #category-heading {
-    font-size:50px;
+    font-size:80px;
     text-align: center;
     margin:50px auto;
 }
@@ -92,26 +92,30 @@ body {
     padding:25px;
 }
 #programmingLanguages {
-    background: linear-gradient(to right, #000081, white);
+    background: linear-gradient(to right, gray, lightgray);
 }
 #frameWorks {
-    background: linear-gradient(to right, white, #147b14);
+    background: linear-gradient(to right, gray, lightgray);
 }
 #movieNames {
-    background: linear-gradient(to right, #bc7a00, white); 
+    background: linear-gradient(to right, gray, lightgray); 
 }
 #countryNames {
-    background: linear-gradient(to right, white, #b10000);
+    background: linear-gradient(to right, gray, lightgray);
 }
 #thirdPage {
     display:none;
     text-align: center;
+}
+#categoryName {
+    font-size:80px;
 }
 #wordWrap {
     display:inline-block;
     width:50%;
     margin:0 auto;
     padding:10px;
+    margin-bottom: 100px;
 }
 #letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10, #letter11, #letter12, #letter13, #letter14, #letter15 {
     width: 10%;
@@ -141,33 +145,35 @@ body {
     float:left;
     margin:0 10px 10px 0;
     cursor:pointer;
-    background-color: red;
+    background-color: gray;
 }
 #characters div:hover {
-    background-color: blue;
+    background-color: darkgray;
 }
 #characters div:active {
     width:50px;
     font-size: 45px;
     padding-top: 3px;
-    background-color: green;
 }
 #results {
     margin-top:10px;
-    height:70px;
+    margin-bottom:20px;
+    height:50px;
     visibility: hidden;
     line-height: 70px;
+    color:black;
 }
 #reset, #home {
     display:none;
-    width:50%;
+    width:20%;
     height:65px;
-    margin:0 auto 20 auto;
+    margin:20px auto 20px auto;
     font-size:35px;
     line-height:65px;
     text-align: center;
-    color:white;
-    background-color: steelblue;
+    color:black;
+    background: linear-gradient(to right, gray, lightgray);
+    border:1px solid gray;
     border-radius: 25px;
     cursor:pointer;
 }
@@ -176,13 +182,11 @@ body {
     #firstPage {
         width:60%;
         height:500px;
-        /* background-color: red; */
     }
     #firstPageText {
         width:80%;
         height:100px;
         padding-top: 20px;
-        /* background-color: blue; */
     }
     #heading {
         font-size:40px;
@@ -227,11 +231,9 @@ body {
     #firstPage {
         width:100%;
         height:100%;
-        /* background-color: red; */
     }
     #firstPageText {
         width:100%;
-        /* background-color: blue; */
     }
     #heading {
         font-size:24px;
@@ -259,5 +261,13 @@ body {
     }
     #programmingLanguages,#frameWorks,#movieNames,#countryNames {
         font-size:15px;
+    }
+    #characters {
+        width:200px;
+    }
+    #characters div {
+        width:30px;
+        font-size:24px;
+        height:30px;
     }
 }

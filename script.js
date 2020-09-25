@@ -68,62 +68,6 @@ function hangman() {
 }
 
 function draw(){
-    var homeImage = document.getElementById("hangingStand").getContext('2d');
-        homeImage.fillStyle = "white";
-        homeImage.lineWidth=3;
-        homeImage.fillRect(0, 0, 300, 300);
-        homeImage.beginPath(); //vertical bar
-            homeImage.moveTo(50,270);
-            homeImage.lineTo(50,25);
-            homeImage.stroke();
-        homeImage.beginPath(); //vertical bar long piece
-            homeImage.moveTo(65,270);
-            homeImage.lineTo(65,85);
-            homeImage.stroke();
-        homeImage.beginPath(); //vertical bar short piece
-            homeImage.moveTo(65,64);
-            homeImage.lineTo(65,40);
-            homeImage.stroke();
-        homeImage.beginPath(); //horizontal bar
-            homeImage.moveTo(49,25);
-            homeImage.lineTo(175,25);
-            homeImage.stroke();
-        homeImage.beginPath(); //horizontal bar short piece
-            homeImage.moveTo(49,40);
-            homeImage.lineTo(86,40);
-            homeImage.stroke();
-        homeImage.beginPath(); //horizontal bar long piece
-            homeImage.moveTo(106,40);
-            homeImage.lineTo(175,40);
-            homeImage.stroke();
-        homeImage.beginPath(); //small vertical bar
-            homeImage.moveTo(173,25);
-            homeImage.lineTo(173,40);
-            homeImage.stroke();
-        homeImage.beginPath(); //cross bar
-            homeImage.moveTo(50,80);
-            homeImage.lineTo(100,25);
-            homeImage.stroke();
-        homeImage.beginPath(); //cross bar
-            homeImage.moveTo(60,90);
-            homeImage.lineTo(111,35);
-            homeImage.stroke();
-        homeImage.beginPath(); //cross bar
-            homeImage.moveTo(50,80);
-            homeImage.lineTo(60,90);
-            homeImage.stroke();
-        homeImage.beginPath(); //cross bar
-            homeImage.moveTo(100,25);
-            homeImage.lineTo(111,35);
-            homeImage.stroke();
-        homeImage.beginPath(); //ground
-            homeImage.moveTo(35,270);
-            homeImage.lineTo(265,270);
-            homeImage.stroke();
-        homeImage.beginPath(); //noose
-            homeImage.moveTo(150,40);
-            homeImage.lineTo(150,80);
-            homeImage.stroke();
     var gameImage = document.getElementById("hangMan").getContext('2d');
         gameImage.fillStyle = "white";
         gameImage.lineWidth=3;
@@ -192,7 +136,7 @@ function guessLetter() {
     var results=document.getElementById('results');
     var ul1=document.getElementById('underline1').offsetWidth;
     for(var i=1;i<=15;i++) {
-        if(document.getElementById('letter'+i).innerHTML===upper || document.getElementById('letter'+a).innerHTML===lower) {
+        if(document.getElementById('letter'+i).innerHTML===upper || document.getElementById('letter'+i).innerHTML===lower) {
             document.getElementById('letter'+i).style.visibility='visible';
             correct++;
             numberOfRight++;
@@ -204,8 +148,8 @@ function guessLetter() {
     }
     if(numberOfWrong==6) {
         results.style.visibility='visible';
-        results.style.color='red';
-        results.innerHTML="you can't miss another letter!!!!";
+        results.style.color='black';
+        results.innerHTML="!!!!you can't miss another letter!!!!";
         if(ul1==50) {
             results.style.lineHeight='70px';
             results.style.fontSize='30px';
@@ -220,18 +164,23 @@ function guessLetter() {
         }
     }
     if(numberOfWrong==7) {
+        results.style.visibility='visible';
+        results.style.color='black';
         results.innerHTML='You lose!!!';
         document.getElementById('characters').style.display='none';
         document.getElementById('reset').style.display='block';
         document.getElementById('home').style.display='block';
         if(ul1 == 50){
             results.style.lineHeight = "40px";
+            results.style.fontSize='80px';
         }
         if(ul1 == 30){
             results.style.lineHeight = "25px";
+            results.style.fontSize='15px';
         }
         if(ul1 == 20){
             results.style.lineHeight = "20px";
+            results.style.fontSize='10px';
         }
     }
     if(numberOfRight==wordLength) {
@@ -244,7 +193,7 @@ function win() {
     var reset=document.getElementById('reset');
     var results=document.getElementById('results');
     results.style.visibility='visible';
-    results.style.color='green';
+    results.style.color='red';
     results.innerHTML='You win!!!!';
     document.getElementById('characters').style.display='none';
     reset.style.display='block';
@@ -252,7 +201,7 @@ function win() {
     if(ul1==50) {
         reset.style.marginTop='75px';
         results.style.marginTop='75px';
-        results.style.fontSize='200px';
+        results.style.fontSize='150px';
     }
     if(ul1==30) {
         reset.style.marginTop='50px';
@@ -269,19 +218,157 @@ function penalty() {
     var choiceWrong=document.getElementById('hangMan').getContext('2d');
     if(numberOfWrong==1) {
         choiceWrong.beginPath(); //head
-            choiceWrong.arc(150, 100, 20, 0, 2*Math.PI);
-            choiceWrong.stroke();
+        choiceWrong.arc(150, 100, 20, 0, 2*Math.PI);
+        choiceWrong.stroke();
         choiceWrong.beginPath(); //left eye
-            choiceWrong.arc(143, 95, 3.5, 0, 2*Math.PI);
-            choiceWrong.stroke();
+        choiceWrong.arc(143, 95, 3.5, 0, 2*Math.PI);
+        choiceWrong.stroke();
         choiceWrong.beginPath(); //right eye
-            choiceWrong.arc(157, 95, 3.5, 0, 2*Math.PI);
-            choiceWrong.stroke();
+        choiceWrong.arc(157, 95, 3.5, 0, 2*Math.PI);
+        choiceWrong.stroke();
         choiceWrong.beginPath(); //mouth
-            choiceWrong.arc(150, 103, 9, 0, Math.PI);
-            choiceWrong.stroke();
+        choiceWrong.arc(150, 103, 9, 0, Math.PI);
+        choiceWrong.stroke();
     }
-    // if(numberOfWrong==2) {
+    if(numberOfWrong==2) {
+        choiceWrong.beginPath();
+        choiceWrong.moveTo(150,120);
+        choiceWrong.lineTo(150,190);
+        choiceWrong.stroke();
+    }
+    if(numberOfWrong==3){
+        choiceWrong.fillStyle = "white";
+        choiceWrong.fillRect(138, 102, 24, 12); //cover mouth
+        choiceWrong.beginPath(); //straight mouth
+        choiceWrong.moveTo(140,108);
+        choiceWrong.lineTo(160,108);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //right arm
+        choiceWrong.moveTo(150,135);
+        choiceWrong.lineTo(180,160);
+        choiceWrong.stroke();
+    }
+    if(numberOfWrong==4){
+        choiceWrong.beginPath(); //left arm
+        choiceWrong.moveTo(150,135);
+        choiceWrong.lineTo(120,160);
+        choiceWrong.stroke();
+    }
+    if(numberOfWrong==5){
+        choiceWrong.fillRect(138, 102, 24, 12); //cover mouth
+        choiceWrong.beginPath(); //sad mouth
+        choiceWrong.arc(150, 112, 9, 0, Math.PI, true);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //right leg
+        choiceWrong.moveTo(149,188);
+        choiceWrong.lineTo(180,230);
+        choiceWrong.stroke();
+    }
+    if(numberOfWrong==6){
+        choiceWrong.beginPath(); //left leg
+        choiceWrong.moveTo(151,188);
+        choiceWrong.lineTo(120,230);
+        choiceWrong.stroke();
+    }
+    if(numberOfWrong==7){
+        choiceWrong.fillRect(138, 90, 24, 24); //cover face
+        choiceWrong.fillRect(118, 121.2, 70, 120); //cover body
+        choiceWrong.beginPath(); //straight mouth
+        choiceWrong.moveTo(140,108);
+        choiceWrong.lineTo(160,108);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //body
+        choiceWrong.moveTo(150,135);
+        choiceWrong.lineTo(150,205);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //right arm
+        choiceWrong.moveTo(150,150);
+        choiceWrong.lineTo(180,175);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //left arm
+        choiceWrong.moveTo(150,150);
+        choiceWrong.lineTo(120,175);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //right leg
+        choiceWrong.moveTo(149,203);
+        choiceWrong.lineTo(180,245);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //left leg
+        choiceWrong.moveTo(151,203);
+        choiceWrong.lineTo(120,245);
+        choiceWrong.stroke();
+        choiceWrong.lineWidth=2;
+        choiceWrong.beginPath(); //left eye
+        choiceWrong.moveTo(140,93);
+        choiceWrong.lineTo(146,98);
+        choiceWrong.stroke();
+        choiceWrong.moveTo(140,98);
+        choiceWrong.lineTo(146,93);
+        choiceWrong.stroke();
+        choiceWrong.beginPath(); //right eye
+        choiceWrong.moveTo(154,98);
+        choiceWrong.lineTo(160,93);
+        choiceWrong.stroke(); 
+        choiceWrong.moveTo(154,93);
+        choiceWrong.lineTo(160,98);
+        choiceWrong.stroke();
+    }
+}
 
-    // }
+
+function reset() {
+    var ul1=document.getElementById('underline1').offsetWidth;
+    var results=document.getElementById('results');
+    var reset=document.getElementById('reset');
+    for(var i=1;i<=15;i++) {
+        document.getElementById('letter'+i).innerHTML='&nbsp;';
+        document.getElementById('underline'+i).style.width = ul1 + "px";
+        if(ul1 == 50){
+            document.getElementById('underline'+i).style.marginRight = "5px";
+            results.style.height = "70px";
+        }
+        else if(ul1 == 30){
+            document.getElementById('underline'+i).style.marginRight = "3px";
+            results.style.height = "50px";
+        }
+        else{
+            document.getElementById('underline'+i).style.marginRight = "3px";
+            results.style.height = "40px";
+        }
+        document.getElementById('underline'+i).style.display='none';
+        document.getElementById('underline'+i).style.borderBottom='0px';
+    }
+    var char=document.getElementById('characters').querySelectorAll('div');
+    for(var j=0;j<26;j++) {
+        char[j].style.visibility='visible';
+    }
+    numberOfWrong=0;
+    numberOfRight=0;
+    wordLength=0;
+    numberOfCharacters=0;
+    results.style.marginTop='5px';
+    results.style.lineHeight='40px';
+    results.innerHTML=' '; 
+    document.getElementById('thirdPage').style.display='block';
+    document.getElementById('characters').style.display='block';
+    reset.style.marginTop='0px';
+    reset.style.display='none';
+    document.getElementById('home').style.display='none';
+    draw();
+    if(programLang.indexOf(word) > -1){
+        programLang.splice(random,1);
+        programmingLanguages();
+    }
+    else if(frameworks.indexOf(word) > -1){
+        frameworks.splice(random,1);
+        frameWorks();
+    }
+    else if(movienames.indexOf(word) > -1){
+        movienames.splice(random,1);
+        movieNames();
+    }
+    else if(countrynames.indexOf(word) > -1){
+        countrynames.splice(random,1);
+        countryNames();
+    }
 }
