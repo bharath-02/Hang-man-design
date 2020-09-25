@@ -122,21 +122,21 @@ body {
     line-height:60px;
 }
 #underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, #underline8, #underline9, #underline10, #underline11, #underline12, #underline13, #underline14, #underline15 {
-    width:10%;
+    width:50px;
     height:50px;
     display:none;
     float:left;
     margin-right:5px;
 }
 #characters {
-    width: 5%;
-    height:10px;
+    width: 780px;
+    height:120px;
     margin:20px auto;
     font-size:50px;
     text-align: center;
 }
 #characters div {
-    width:80%;
+    width:50px;
     height:50px;
     float:left;
     margin:0 10px 10px 0;
@@ -147,7 +147,7 @@ body {
     background-color: blue;
 }
 #characters div:active {
-    width:80%;
+    width:50px;
     font-size: 45px;
     padding-top: 3px;
     background-color: green;

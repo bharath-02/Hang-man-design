@@ -5,6 +5,8 @@ var countrynames=['Australia','NewZealand','Afganistan','Zimbabwe','Portugal','B
 var random=0;
 var word='';
 var numberOfCharacters=0;
+var numberOfRight=0;
+var numberOfWrong=0;
 var wordLength=0;
 
 function start() {
@@ -17,7 +19,7 @@ function programmingLanguages() {
     word=programLang[random];
     document.getElementById('secondPage').style.display='none';
     document.getElementById('categoryName').innerHTML='Programming Languages';
-    hangman(word);
+    hangman();
 }
 
 function frameWorks() {
@@ -25,7 +27,7 @@ function frameWorks() {
     word=frameworks[random];
     document.getElementById('secondPage').style.display='none';
     document.getElementById('categoryName').innerHTML='Frameworks';
-    hangman(word);
+    hangman();
 }
 
 function movieNames() {
@@ -33,7 +35,7 @@ function movieNames() {
     word=movienames[random];
     document.getElementById('secondPage').style.display='none';
     document.getElementById('categoryName').innerHTML='Movie Names';
-    hangman(word);
+    hangman();
 }
 
 function countryNames() {
@@ -41,17 +43,17 @@ function countryNames() {
     word=countrynames[random];
     document.getElementById('secondPage').style.display='none';
     document.getElementById('categoryName').innerHTML='Country Names';
-    hangman(word);
+    hangman();
 }
 
-function hangman(word) {
+function hangman() {
     var validCharacters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     var x=word.length;
     var y=x-1;
     while(x>0) {
         numberOfCharacters++;
         var letter=word.substring(y,x);
-        if(validCharacters.indexOf(letter)>-1) {
+        if((validCharacters.indexOf(letter))>(-1)) {
             document.getElementById('letter'+x).innerHTML=letter;
             document.getElementById('letter'+x).style.visibility="hidden";
             document.getElementById('underline'+x).style.display='block';
@@ -63,7 +65,6 @@ function hangman(word) {
     wordLength=word.length;
     document.getElementById('thirdPage').style.display='block';
     draw();
-
 }
 
 function draw(){
@@ -179,4 +180,108 @@ function draw(){
             gameImage.moveTo(150,40);
             gameImage.lineTo(150,80);
             gameImage.stroke();
+}
+
+
+function guessLetter() {
+    var correct=0;
+    var target=event.target || event.srcElement;
+    target.style.visibility='hidden';
+    var lower=target.id;
+    var upper=document.getElementById(lower).getAttribute('value');
+    var results=document.getElementById('results');
+    var ul1=document.getElementById('underline1').offsetWidth;
+    for(var i=1;i<=15;i++) {
+        if(document.getElementById('letter'+i).innerHTML===upper || document.getElementById('letter'+a).innerHTML===lower) {
+            document.getElementById('letter'+i).style.visibility='visible';
+            correct++;
+            numberOfRight++;
+        }
+    }
+    if(correct==0) {
+        numberOfWrong++;
+        penalty();
+    }
+    if(numberOfWrong==6) {
+        results.style.visibility='visible';
+        results.style.color='red';
+        results.innerHTML="you can't miss another letter!!!!";
+        if(ul1==50) {
+            results.style.lineHeight='70px';
+            results.style.fontSize='30px';
+        }
+        if(ul1==30) {
+            results.style.lineHeight='50px';
+            results.style.fontSize='25px';
+        }
+        if(ul1==20) {
+            results.style.lineHeight='40px';
+            results.style.fontSize='20px';
+        }
+    }
+    if(numberOfWrong==7) {
+        results.innerHTML='You lose!!!';
+        document.getElementById('characters').style.display='none';
+        document.getElementById('reset').style.display='block';
+        document.getElementById('home').style.display='block';
+        if(ul1 == 50){
+            results.style.lineHeight = "40px";
+        }
+        if(ul1 == 30){
+            results.style.lineHeight = "25px";
+        }
+        if(ul1 == 20){
+            results.style.lineHeight = "20px";
+        }
+    }
+    if(numberOfRight==wordLength) {
+        win();
+    }
+}
+
+function win() {
+    var ul1=document.getElementById('underline1').offsetWidth;
+    var reset=document.getElementById('reset');
+    var results=document.getElementById('results');
+    results.style.visibility='visible';
+    results.style.color='green';
+    results.innerHTML='You win!!!!';
+    document.getElementById('characters').style.display='none';
+    reset.style.display='block';
+    document.getElementById('home').style.display='block';
+    if(ul1==50) {
+        reset.style.marginTop='75px';
+        results.style.marginTop='75px';
+        results.style.fontSize='200px';
+    }
+    if(ul1==30) {
+        reset.style.marginTop='50px';
+        results.style.marginTop='40px';
+        results.style.fontSize='100px';
+    }
+    if(ul1==18) {
+        reset.style.marginTop='40px';
+        results.style.marginTop='15px';
+        results.style.fontSize='75px';
+    }
+}
+function penalty() {
+    var choiceWrong=document.getElementById('hangMan').getContext('2d');
+    if(numberOfWrong==1) {
+        choiceWrong.beginPath(); //head
+            choiceWrong.arc(150, 100, 20, 0, 2*Math.PI);
+            choiceWrong.stroke();
+        choiceWrong.beginPath(); //left eye
+            choiceWrong.arc(143, 95, 3.5, 0, 2*Math.PI);
+            choiceWrong.stroke();
+        choiceWrong.beginPath(); //right eye
+            choiceWrong.arc(157, 95, 3.5, 0, 2*Math.PI);
+            choiceWrong.stroke();
+        choiceWrong.beginPath(); //mouth
+            choiceWrong.arc(150, 103, 9, 0, Math.PI);
+            choiceWrong.stroke();
+    }
+    // if(numberOfWrong==2) {
+
+    // }
 }
