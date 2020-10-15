@@ -1,3 +1,4 @@
+// Categories
 var programLang=['Javascript','Typescript','Python','scala','Ruby'];
 var frameworks=['React','Bootstrap','Angular','Bulma','Tensorflow','Django','Meteor','Foundation','Materialize'];
 var movienames=['Endgame','FantasticFour','JusticeLeague','TheDarkKnights','SuicideSquad','IronMan','TheCivilWar'];
@@ -8,7 +9,7 @@ var numberOfCharacters=0;
 var numberOfRight=0;
 var numberOfWrong=0;
 var wordLength=0;
-
+// Start function
 function start() {
     document.getElementById('firstPage').style.display='none';
     document.getElementById('secondPage').style.display='block';
@@ -46,6 +47,7 @@ function countryNames() {
     hangman();
 }
 
+// Hangman functions
 function hangman() {
     var validCharacters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     var x=word.length;
@@ -67,6 +69,7 @@ function hangman() {
     draw();
 }
 
+// Drawing the images
 function draw(){
     var gameImage = document.getElementById("hangMan").getContext('2d');
         gameImage.fillStyle = "white";
@@ -126,7 +129,7 @@ function draw(){
             gameImage.stroke();
 }
 
-
+// Playing the game
 function guessLetter() {
     var correct=0;
     var target=event.target || event.srcElement;
@@ -188,6 +191,7 @@ function guessLetter() {
     }
 }
 
+// If win
 function win() {
     var ul1=document.getElementById('underline1').offsetWidth;
     var reset=document.getElementById('reset');
@@ -214,6 +218,7 @@ function win() {
         results.style.fontSize='75px';
     }
 }
+// If make any wrong
 function penalty() {
     var choiceWrong=document.getElementById('hangMan').getContext('2d');
     if(numberOfWrong==1) {
@@ -315,7 +320,7 @@ function penalty() {
     }
 }
 
-
+// Play again
 function reset() {
     var ul1=document.getElementById('underline1').offsetWidth;
     var results=document.getElementById('results');
