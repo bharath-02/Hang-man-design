@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Meta-Details -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title of the page -->
 	<title>Hang-Man Game</title>
+	<!-- Required stylesheets -->
 	<link rel="stylesheet" href="styles.css">
+	<!-- Required Scripts -->
 	<script type="text/javascript" src="script.js"></script>
     <script>window.onload = draw;</script>
 </head>
 <body>
 	<div id="container">
+		<!-- First page -->
 		<div id="firstPage">
 			<div id="firstPageText">
 				<h1 id="heading">Hangman Game</h1>
@@ -19,6 +24,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- Second page -->
 		<div id="secondPage">
 			<h3 id="category-heading">Choose a Category</h3>
 			<div id="categoryContainer">
@@ -34,6 +40,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- Third page -->
 		<div id="thirdPage">
 			<h2 id="categoryName"></h2>
 			<div id="wordWrap">
@@ -83,8 +90,11 @@
 					<div id="letter15"></div>
 				</div>
 			</div>
+			<!-- Hanging image -->
 			<canvas id="hangMan" width="300px" height="300px"></canvas>
+			<!-- Displaying results -->
 			<div id="results"></div>
+			<!-- Keyboard -->
 			<div id="characters">
 				<div id="a" value="A" onclick="guessLetter()">A</div>
                 <div id="b" value="B" onclick="guessLetter()">B</div>
@@ -113,7 +123,9 @@
                 <div id="y" value="Y" onclick="guessLetter()">Y</div>
                 <div id="z" value="Z" onclick="guessLetter()">Z</div>
 			</div>
+			<!-- Play again -->
 			<div id="reset" onclick="reset()">Reset</div>
+			<!-- Return to home -->
 			<div id="home" onclick="window.location.reload()">Home</div>
 		</div>
 	</div>
