@@ -1,3 +1,4 @@
+/*  Defaults */
 * {
     box-sizing:border-box;
 }
@@ -177,7 +178,7 @@ body {
     border-radius: 25px;
     cursor:pointer;
 }
-
+/*  Media Queries  */
 @media (max-width:866px) {
     #firstPage {
         width:60%;
